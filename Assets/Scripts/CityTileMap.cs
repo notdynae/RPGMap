@@ -1,17 +1,20 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class CityTileMap : MonoBehaviour
 {
     public Tilemap myTileMap;
     public TileBase liveTile;
     public Camera myCam;
-    public int[,] gameMap = new int [27, 27];
-    public int[,] newGameMap = new int [27, 27];
+    public int[,] gameMap = new int [100, 50];
+    public int[,] newGameMap = new int [100, 50];
     
 
 
@@ -26,7 +29,7 @@ public class CityTileMap : MonoBehaviour
     void GenerateTileMap () {
 		for (int y = 1; y < newGameMap.GetLength(1) - 1; y++) {
 			for (int x = 1; x < newGameMap.GetLength(0) - 1; x++) {
-				newGameMap[x, y] = (UnityEngine.Random.Range(0, 2));
+				newGameMap[x, y] = (UnityEngine.Random.Range(0, 5)) == 1 ? 1 : 0;
 			}
 		}
 		gameMap = newGameMap;
@@ -41,11 +44,15 @@ public class CityTileMap : MonoBehaviour
 				else myTileMap.SetTile(new Vector3Int(x, y, 0), null);
 			}
 		}
-        gameMap = newGameMap;
+		gameMap = newGameMap;
 	}
 
+	//Birth: A dead cell with exactly three live neighbors becomes alive
+	//Death by isolation: A live cell with one or fewer live neighbors dies
+	//Death by overcrowding: A live cell with four or more live neighbors dies
+	//Survival: A live cell with two or three live neighbors remains alive
 
-    public void LifeCheck() {
+	public void LifeCheck() {
 		for (int y = 1; y < gameMap.GetLength(1) - 1; y++) {
 			for (int x = 1; x < gameMap.GetLength(0) - 1; x++) {
                 int neighbours = GetNeighbourCount(x, y);
