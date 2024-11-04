@@ -53,9 +53,15 @@ public class CityTileMap : MonoBehaviour
 	//Survival: A live cell with two or three live neighbors remains alive
 
 	public void LifeCheck() {
+
+		// iterates over every cell
 		for (int y = 1; y < gameMap.GetLength(1) - 1; y++) {
 			for (int x = 1; x < gameMap.GetLength(0) - 1; x++) {
+
+				// calls 3x3 neighbour check on each cell
                 int neighbours = GetNeighbourCount(x, y);
+
+				// logic for if cell dies, survives, or is born
                 if (gameMap[x, y] == 1) {
 					if (neighbours < 2 || neighbours > 3) {
 						newGameMap[x, y] = 0;
@@ -74,11 +80,13 @@ public class CityTileMap : MonoBehaviour
 
         int neighbours = 0;
 
+		// loops over 3x3 grid around given cell coordinates
         for (int x = -1; x < 2; x++) {
 			for (int y = -1; y < 2; y++) {
                 if (gameMap[xCoords + x, yCoords + y] == 1) neighbours++;
 			}
 		}
+		// removes cell itself from count if alive
         if (gameMap[xCoords, yCoords] == 1) neighbours--;
 		return neighbours;
     }
