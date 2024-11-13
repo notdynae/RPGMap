@@ -3,6 +3,7 @@ using UnityEngine.Tilemaps;
 
 public class MapManager : MonoBehaviour
 {
+	public MapLayout mapLayout;
 	public Camera myCam;
 
 	public Tilemap tileMap;
@@ -17,6 +18,26 @@ public class MapManager : MonoBehaviour
 	public const char buildChar = '#';
 
 	public int[,] gameMap = new int[mapWidth, mapHeight];
+
+	void StringToMap(string mapString) {
+
+	}
+
+	string GenerateStringMap(int width, int height) {
+		string stringMap = "";
+
+		for (int y = 0; y < height; y++) {
+			for (int x = 0; x < width; x++) {
+				stringMap += "=";
+			}
+			stringMap += "\n";
+		}
+		return stringMap;
+	}
+
+	string LoadMap(string mapPath) {
+		return "map";
+	}
 
 	void DrawTileMap() {
 		for (int y = 0; y < gameMap.GetLength(1); y++) {
@@ -34,7 +55,17 @@ public class MapManager : MonoBehaviour
 	}
 
 	public void Start() {
+		GenerateStringMap(mapWidth, mapHeight);
 		DrawTileMap();
+		mapLayout.GenerateRoads(0,0);
+		mapLayout.GenerateRoads(0,0);
+		mapLayout.GenerateRoads(0,0);
+		mapLayout.GenerateRoads(0,0);
+		mapLayout.GenerateRoads(0,0);
+		mapLayout.GenerateRoads(0,0);
+		mapLayout.GenerateRoads(0,0);
+		mapLayout.GenerateRoads(0,0);
+		mapLayout.GenerateRoads(0,0);
+		mapLayout.GenerateRoads(0,0);
 	}
-
 }

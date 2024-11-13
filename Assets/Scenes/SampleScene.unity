@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 9062468}
   - component: {fileID: 9062467}
   - component: {fileID: 9062469}
+  - component: {fileID: 9062470}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -311,10 +312,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7daf29f2f9b0990459bd404780103481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapLayout: {fileID: 9062470}
   myCam: {fileID: 519420031}
   tileMap: {fileID: 9062468}
   sidewalkTile: {fileID: 11400000, guid: 33c751162416e834a8ee9a2228b35a29, type: 2}
   roadTile: {fileID: 11400000, guid: 3ca7039065bf1184da160e4fb7008f66, type: 2}
+--- !u!114 &9062470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9062465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3dfaff147ad43a49b051393fc882bfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapManager: {fileID: 9062469}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
