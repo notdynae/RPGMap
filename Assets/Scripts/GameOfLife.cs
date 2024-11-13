@@ -1,20 +1,13 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
-public class CityTileMap : MonoBehaviour
+public class GameOfLife : MonoBehaviour
 {
     public Tilemap myTileMap;
     public TileBase liveTile;
     public Camera myCam;
-    public int[,] gameMap = new int [100, 50];
-    public int[,] newGameMap = new int [100, 50];
+    public int[,] gameMap = new int [27, 17];
+    public int[,] newGameMap = new int [27, 17];
     
 
 
@@ -33,7 +26,6 @@ public class CityTileMap : MonoBehaviour
 			}
 		}
 		gameMap = newGameMap;
-
 	}
 
     void DrawTileMap() {
