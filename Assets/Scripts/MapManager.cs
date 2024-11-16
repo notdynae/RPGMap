@@ -1,4 +1,5 @@
 using System.IO;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -13,7 +14,6 @@ public class MapManager : MonoBehaviour
 	
 	public TileBase roadTile;
 	public TileBase grassTile;
-	public TileBase borderTile;
 	
 	public TileBase sidewalkTile;
 	public TileBase sidewalkTileN;
@@ -29,10 +29,9 @@ public class MapManager : MonoBehaviour
 	public TileBase sidewalkInnerSW;
 	public TileBase sidewalkInnerNW;
 
-	public TileBase npc1;
-	public TileBase npc2;
-	public TileBase npc3;
-	public TileBase npc4;
+	public TileBase npcTile;
+	public TileBase borderTile;
+	public TileBase garbageTile;
 	
 	// ---------------------------------- Consts / Variables
 	// const int mapWidth = 20;
@@ -50,14 +49,14 @@ public class MapManager : MonoBehaviour
 	
 	public void StringToMap(string mapData) {
 		Debug.Log(mapData);
-		int mapWidth = mapData.IndexOf('\n')-1;
+		int mapWidth = mapData.IndexOf('\n');
 		int mapHeight = mapWidth;
 		DrawBaseMap(mapHeight, mapWidth);
 		int index = 0;
-		for (int y = 0; y < mapHeight; y++) {
-			for (int x = 0; x < mapWidth; x++) {
+		for (int y = 0; y < mapHeight + 1; y++) {
+			for (int x = 0; x < mapWidth + 1; x++) {
 				char tileChar = mapData[index];
-				Vector3Int position = new Vector3Int(x + borderOffset + 2, y + borderOffset + 2, 0);
+				Vector3Int position = new Vector3Int(x + borderOffset, y + borderOffset, 0);
 
 				switch (tileChar)
 				{
@@ -65,10 +64,10 @@ public class MapManager : MonoBehaviour
 						decoTileMap.SetTile(position, borderTile);
 						break;
 					case obstChar:
-						decoTileMap.SetTile(position, grassTile);
+						decoTileMap.SetTile(position, garbageTile);
 						break;
 					case npcChar:
-						decoTileMap.SetTile(position, npc1);
+						decoTileMap.SetTile(position, npcTile);
 						break;
 					default:
 						break;
@@ -102,8 +101,8 @@ public class MapManager : MonoBehaviour
 
 	public void DrawBaseMap(int width, int height) {
 
-		int baseWidth = width + 3;
-		int baseHeight = height + 3;
+		int baseWidth = width-2 ;
+		int baseHeight = height -2;
 		for (int y = 0; y < baseHeight + borderOffset*2; y++) {
 			for (int x = 0; x < baseWidth + borderOffset*2; x++) {
 
@@ -163,6 +162,7 @@ public class MapManager : MonoBehaviour
 	}
 
 	public void Start() {
-		StringToMap(GenerateStringMap(20, 20));
+		// LoadMap(Application.dataPath + "/Maps/gameMap.txt");
+		StringToMap(GenerateStringMap(50, 50));
 	}
 }

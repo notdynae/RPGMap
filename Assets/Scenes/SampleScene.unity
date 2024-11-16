@@ -430,7 +430,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.01, y: 17.02, z: -1}
+  m_LocalPosition: {x: 11.75, y: 11.78, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -613,7 +613,6 @@ MonoBehaviour:
   decoTileMap: {fileID: 1534316137}
   roadTile: {fileID: 11400000, guid: 3ca7039065bf1184da160e4fb7008f66, type: 2}
   grassTile: {fileID: 11400000, guid: 2d0881f7b9670de489a01d899ce38520, type: 2}
-  waterTile: {fileID: 11400000, guid: 71975c48602282448903de23a502c882, type: 2}
   sidewalkTile: {fileID: 11400000, guid: 33c751162416e834a8ee9a2228b35a29, type: 2}
   sidewalkTileN: {fileID: 11400000, guid: 7a91ac655fa36c449824caabbac23c54, type: 2}
   sidewalkTileNE: {fileID: 11400000, guid: 437346ac0535bc84fbc537b04a015c91, type: 2}
@@ -627,10 +626,9 @@ MonoBehaviour:
   sidewalkInnerSE: {fileID: 11400000, guid: 14fc050c8a8e2c34a967cd5b1e0c99db, type: 2}
   sidewalkInnerSW: {fileID: 11400000, guid: e0aefdf89fc609545b030103b774bb6c, type: 2}
   sidewalkInnerNW: {fileID: 11400000, guid: fe08014a38ea4764abe52c03da32aa00, type: 2}
-  npc1: {fileID: 11400000, guid: 52da68ea47227774a93d18a88630b019, type: 2}
-  npc2: {fileID: 0}
-  npc3: {fileID: 0}
-  npc4: {fileID: 0}
+  npcTile: {fileID: 11400000, guid: 524549a717c0d9d49a754963224d517e, type: 2}
+  borderTile: {fileID: 11400000, guid: 8badd52b8ec52c8418cb4a9f139bdf0d, type: 2}
+  garbageTile: {fileID: 11400000, guid: a16650c15085f5f42b57f1f996d1c0f9, type: 2}
 --- !u!4 &1146517636
 Transform:
   m_ObjectHideFlags: 0
@@ -965,7 +963,7 @@ Transform:
   m_GameObject: {fileID: 1688659740}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.03, y: 17.13, z: -0.03}
+  m_LocalPosition: {x: 11.85, y: 11.91, z: -0.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -983,8 +981,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ce11c7a81b14804ca35668d80771948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
-  rb: {fileID: 1688659741}
+  moveSpeed: 5
+  decoTileMap: {fileID: 1534316137}
+  npcTile: {fileID: 11400000, guid: 524549a717c0d9d49a754963224d517e, type: 2}
+  borderTile: {fileID: 11400000, guid: 8badd52b8ec52c8418cb4a9f139bdf0d, type: 2}
+  garbageTile: {fileID: 11400000, guid: a16650c15085f5f42b57f1f996d1c0f9, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
