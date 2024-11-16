@@ -430,7 +430,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.5, y: 8, z: -1}
+  m_LocalPosition: {x: 17.01, y: 17.02, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -610,9 +610,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myCam: {fileID: 519420031}
   groundTileMap: {fileID: 9062468}
-  walkTileMap: {fileID: 1534316137}
-  sidewalkTile: {fileID: 11400000, guid: 33c751162416e834a8ee9a2228b35a29, type: 2}
+  decoTileMap: {fileID: 1534316137}
   roadTile: {fileID: 11400000, guid: 3ca7039065bf1184da160e4fb7008f66, type: 2}
+  grassTile: {fileID: 11400000, guid: 2d0881f7b9670de489a01d899ce38520, type: 2}
+  waterTile: {fileID: 11400000, guid: 71975c48602282448903de23a502c882, type: 2}
+  sidewalkTile: {fileID: 11400000, guid: 33c751162416e834a8ee9a2228b35a29, type: 2}
+  sidewalkTileN: {fileID: 11400000, guid: 7a91ac655fa36c449824caabbac23c54, type: 2}
+  sidewalkTileNE: {fileID: 11400000, guid: 437346ac0535bc84fbc537b04a015c91, type: 2}
+  sidewalkTileE: {fileID: 11400000, guid: c833e990194b5164ebd4d94ee5d06e77, type: 2}
+  sidewalkTileSE: {fileID: 11400000, guid: c1c74dacfb0062d408bafdfd32995a37, type: 2}
+  sidewalkTileS: {fileID: 11400000, guid: e77625512123367409ecde962d5c0dcb, type: 2}
+  sidewalkTileSW: {fileID: 11400000, guid: bb1901cf00d01df4d8cb1021363a8a52, type: 2}
+  sidewalkTileW: {fileID: 11400000, guid: 96059882a5a373b4cb186e5ee0493795, type: 2}
+  sidewalkTileNW: {fileID: 11400000, guid: 1dc3aba4c8fd8c54ba113dc36ba43be7, type: 2}
+  sidewalkInnerNE: {fileID: 11400000, guid: 95af018beb2d6e541aa7acf6ec069b4b, type: 2}
+  sidewalkInnerSE: {fileID: 11400000, guid: 14fc050c8a8e2c34a967cd5b1e0c99db, type: 2}
+  sidewalkInnerSW: {fileID: 11400000, guid: e0aefdf89fc609545b030103b774bb6c, type: 2}
+  sidewalkInnerNW: {fileID: 11400000, guid: fe08014a38ea4764abe52c03da32aa00, type: 2}
+  npc1: {fileID: 11400000, guid: 52da68ea47227774a93d18a88630b019, type: 2}
+  npc2: {fileID: 0}
+  npc3: {fileID: 0}
+  npc4: {fileID: 0}
 --- !u!4 &1146517636
 Transform:
   m_ObjectHideFlags: 0
@@ -640,7 +658,7 @@ GameObject:
   - component: {fileID: 1534316137}
   - component: {fileID: 1534316136}
   m_Layer: 0
-  m_Name: WallMap
+  m_Name: DecoMap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -818,7 +836,7 @@ GameObject:
   - component: {fileID: 1688659741}
   - component: {fileID: 1688659745}
   m_Layer: 3
-  m_Name: Dynamic Sprite
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -947,7 +965,7 @@ Transform:
   m_GameObject: {fileID: 1688659740}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.24, y: 7.9258714, z: -0.03}
+  m_LocalPosition: {x: 17.03, y: 17.13, z: -0.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
