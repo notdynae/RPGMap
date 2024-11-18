@@ -34,16 +34,11 @@ public class MapManager : MonoBehaviour
 	public TileBase garbageTile;
 	
 	// ---------------------------------- Consts / Variables
-	// const int mapWidth = 20;
-	// const int mapHeight = 20;
 	const int borderOffset = 10;
 	
 	const char waterChar = 'w';
 	const char obstChar = 'X';
 	const char npcChar = '@';
-
-	// public int[,] groundMap = new int[mapWidth + borderOffset * 2, mapHeight + borderOffset * 2];
-	// public int[,] decoMap = new int[mapWidth, mapHeight];
 
 	// ----------------------------------- Class Functions
 	
@@ -103,8 +98,8 @@ public class MapManager : MonoBehaviour
 
 		int baseWidth = width-2 ;
 		int baseHeight = height -2;
-		for (int y = 0; y < baseHeight + borderOffset*2; y++) {
-			for (int x = 0; x < baseWidth + borderOffset*2; x++) {
+		for (int y = 0; y < baseHeight + borderOffset*2 +1; y++) {
+			for (int x = 0; x < baseWidth + borderOffset*2 +1; x++) {
 
 				// -------------------------------- outer grass / inner road
 				
@@ -162,7 +157,7 @@ public class MapManager : MonoBehaviour
 	}
 
 	public void Start() {
-		// LoadMap(Application.dataPath + "/Maps/gameMap.txt");
-		StringToMap(GenerateStringMap(50, 50));
+	//	LoadMap(Application.dataPath + "/Maps/gameMap.txt");
+		StringToMap(GenerateStringMap(20, 20));
 	}
 }

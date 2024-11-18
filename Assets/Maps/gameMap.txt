@@ -15,6 +15,6 @@ wXX   X X          w
 w  X   X X     X   w
 w      X           w
 wX XX   X          w
-w       @  X      @w
-w    @     X X X   w
+w @ @   @  X      @w
+w@@@@@     X X X   w
 wwwwwwwwwwwwwwwwwwww
